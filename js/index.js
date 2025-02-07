@@ -39,14 +39,14 @@ function perimeterOfTriangle(sideA, sideB, base) {
 }
 
 function areaOfTriangle(base, height) {
-  return (base * height) / 2;
+  return ((base * height) / 2).toFixed(2);
 }
 
 function isIsoceles(sideA, sideB, base) {
   if (sideA <= 0 || sideB <= 0 || base <= 0) {
     alert(`Ingresa los datos correctos para calcular el área`)
   } else if (((sideA == sideB) && (base != sideA && sideB))) {
-    return Math.sqrt((sideA * sideA) - ((sideB * sideB) / 4))
+    return Math.sqrt((sideA * sideA) - ((sideB * sideB) / 4));
   } else {
     alert(`Los datos ingresados no corresponden a un triángulo isóceles`);
   }
@@ -65,7 +65,7 @@ function perimeterOfCircle(radio) {
   if (diameter <= 0) {
     alert(`El valor que ingresaste para el radio es incorrecto`)
   } else {
-    return diameter * PI;
+    return (diameter * PI).toFixed(2);
   }
 }
 
@@ -73,7 +73,7 @@ function areaOfCircle(radio) {
   if (radio <= 0) {
     alert(`El valor que ingresaste para el radio es incorrecto`)
   } else {
-    return (radio * radio) * PI;
+    return ((radio * radio) * PI).toFixed(2);
   }
 }
 
@@ -88,7 +88,7 @@ function calculatePerimeterOfSquare() {
   if (perimeter == undefined) {
     document.getElementById("result-square").innerHTML = `No se pudo calcular el perímetro`;
   } else {
-    document.getElementById("result-square").innerHTML = `Perimétro: ${perimeter} cm`;
+    document.getElementById("result-square").innerHTML = `Perimétro: ${perimeter} <var>cm</var>`;
   }
 }
 
@@ -96,10 +96,11 @@ function calculateAreaOfSquare() {
   const $input = document.getElementById("input-square");
   const value = $input.value;
   const area = areaOfSquare(value);
+  area.toFixed(2);
   if (area == undefined) {
     document.getElementById("result-square").innerHTML = `No se pudo calcular el área`;
   } else {
-    document.getElementById("result-square").innerHTML = `Área: ${area} cm2`;
+    document.getElementById("result-square").innerHTML = `Área: ${area} <var>cm<sup>2</sup></var>`;
   }
 }
 
@@ -120,7 +121,7 @@ function calculatePerimeterOfTriangle() {
   if (perimeter == undefined) {
     document.getElementById("result-triangle").innerHTML = `No se pudo calcular el perímetro`;
   } else {
-    document.getElementById("result-triangle").innerHTML = `Perimétro: ${perimeter} cm`;
+    document.getElementById("result-triangle").innerHTML = `Perimétro: ${perimeter} <var>cm</var>`;
   }
 }
 
@@ -139,7 +140,7 @@ function calculateAreaOfTriangle() {
     document.getElementById("result-triangle").innerHTML = `No se pudo calcular el área`;
   } else {
     const area = areaOfTriangle(valueC, altura);
-    document.getElementById("result-triangle").innerHTML = `Área: ${area} cm2`;
+    document.getElementById("result-triangle").innerHTML = `Área: ${area} <var>cm<sup>2</sup></var>`;
   }
 }
 
@@ -155,7 +156,7 @@ function calculatePerimeterOfCircle() {
   if (perimeter == undefined) {
     document.getElementById("result-circle").innerHTML = `No se pudo calcular el perímetro`
   } else {
-    document.getElementById("result-circle").innerHTML = `Perímetro: ${perimeter} cm`;
+    document.getElementById("result-circle").innerHTML = `Perímetro: ${perimeter} <var>cm</var>`;
   }
 }
 
@@ -167,6 +168,6 @@ function calculateAreaOfCircle() {
   if (area == undefined) {
     document.getElementById("result-circle").innerHTML = `No se pudo calcular el área`
   } else {
-    document.getElementById("result-circle").innerHTML = `Área: ${area} cm2`;
+    document.getElementById("result-circle").innerHTML = `Área: ${area} <var>cm<sup>2</sup></var>`;
   }
 }
